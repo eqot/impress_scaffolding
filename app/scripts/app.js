@@ -1,6 +1,10 @@
 /*global define */
-define([], function () {
+define(['views/impress'], function (ImpressView) {
     'use strict';
 
-    return '\'Allo \'Allo!';
+    var app = function () {
+        new ImpressView();
+    };
+
+    return app;
 });
