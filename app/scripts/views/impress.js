@@ -8,25 +8,26 @@ define([
     'text!templates/01.html',
     'text!templates/02.html',
     'text!templates/03.html',
-], function ($, Backbone, _, impress, SlideTemplate, S01, S02, S03) {
+    'text!templates/04.html',
+], function ($, Backbone, _, impress, SlideTemplate, S01, S02, S03, S04) {
     'use strict';
 
     var ImpressView = Backbone.View.extend({
         el: $('#impress'),
 
         slides: [
-            S01,
-            S02,
-            S03
+            {content: S01, klass: 'slide', x: -1000, y: -1500, dx: 1000, dy: 0},
+            {content: S02, klass: 'slide'},
+            {content: S03, klass: 'slide'},
+            {content: S04, x: 0, y: 0, scale: 4}
         ],
 
         template: _.template(SlideTemplate),
 
-        x: -1000,
-        y: -1500,
-
-        deltaX: 1000,
-        deltaY: 0,
+        x: 0,
+        y: 0,
+        dx: 0,
+        dy: 0,
 
         initialize: function () {
             // console.log('ImpressView');
@@ -42,12 +43,32 @@ define([
             }, this);
         },
 
-        addSlide: function (content) {
+        addSlide: function (slide) {
             // console.log(content);
-            $(this.el).append(this.template({x: this.x, y: this.y, content: _.template(content)()}));
 
-            this.x += this.deltaX;
-            this.y += this.deltaY;
+            if (slide.x !== undefined) {
+                this.x = slide.x;
+            }
+            if (slide.y !== undefined) {
+                this.y = slide.y;
+            }
+            if (slide.dx !== undefined) {
+                this.dx = slide.dx;
+            }
+            if (slide.dy !== undefined) {
+                this.dy = slide.dy;
+            }
+
+            $(this.el).append(this.template({
+                x: this.x,
+                y: this.y,
+                scale: slide.scale !== undefined ? slide.scale : 1,
+                klass: slide.klass !== undefined ? slide.klass : '',
+                content: _.template(slide.content)()
+            }));
+
+            this.x += this.dx;
+            this.y += this.dy;
         }
     });
 
