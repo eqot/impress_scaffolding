@@ -54,6 +54,7 @@ define([
             }
 
             $(this.el).append(this.template({
+                id: slide.id !== undefined ? slide.id : '',
                 x: this.x,
                 y: this.y,
                 z: this.z,
