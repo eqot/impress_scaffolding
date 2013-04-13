@@ -4,27 +4,13 @@ define([
     'backbone',
     'underscore',
     'impress',
-    'text!templates/slide.html',
-    'text!templates/01.html',
-    'text!templates/02.html',
-    'text!templates/03.html',
-    'text!templates/04.html',
-    'text!templates/05.html',
-    'text!templates/06.html',
-], function ($, Backbone, _, impress, SlideTemplate, S01, S02, S03, S04, S05, S06) {
+    'text!views/slide.html',
+    'slides/slide'
+], function ($, Backbone, _, impress, SlideTemplate, Slide) {
     'use strict';
 
     var ImpressView = Backbone.View.extend({
         el: $('#impress'),
-
-        slides: [
-            {content: S01, klass: 'slide', x: -1000, y: -1500, dx: 1000, dy: 0},
-            {content: S02, klass: 'slide'},
-            {content: S03, klass: 'slide'},
-            {content: S04, x: 0, y: 0, scale: 4},
-            {content: S05, x: 850, y: 3000, rotate: 90, scale: 5},
-            {content: S06, x: 3500, y: 2100, rotate: 180, scale: 6},
-        ],
 
         template: _.template(SlideTemplate),
 
@@ -36,7 +22,7 @@ define([
         initialize: function () {
             // console.log('ImpressView');
 
-            this.addSlides(this.slides);
+            this.addSlides(Slide.slides);
 
             impress().init();
         },
