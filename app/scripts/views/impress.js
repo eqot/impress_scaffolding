@@ -16,6 +16,7 @@ define([
 
         x: 0,
         y: 0,
+        z: 0,
         dx: 0,
         dy: 0,
 
@@ -42,6 +43,9 @@ define([
             if (slide.y !== undefined) {
                 this.y = slide.y;
             }
+            if (slide.z !== undefined) {
+                this.z = slide.z;
+            }
             if (slide.dx !== undefined) {
                 this.dx = slide.dx;
             }
@@ -52,6 +56,7 @@ define([
             $(this.el).append(this.template({
                 x: this.x,
                 y: this.y,
+                z: this.z,
                 rotate: slide.rotate !== undefined ? slide.rotate : 0,
                 scale: slide.scale !== undefined ? slide.scale : 1,
                 klass: slide.klass !== undefined ? slide.klass : '',
