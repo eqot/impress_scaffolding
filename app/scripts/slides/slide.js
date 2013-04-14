@@ -30,6 +30,10 @@ define([
             {content: S11, id: 'one-more-thing', x: 6000, y: 4000, scale: 2},
             {content: S12, id: 'its-in-3d', x: 6200, y: 4300, z: -100, rotateX: -40, rotateY: 10, scale: 2},
             {id: 'overview', x: 3000, y: 1500, scale: 10}
+        ],
+        hint: [
+            'Use a spacebar or arrow keys to navigate',
+            'Tap on the left or right to navigate'
         ]
     };
 

@@ -23,6 +23,7 @@ define([
             // console.log('ImpressView');
 
             this.addSlides(Slide.slides);
+            this.addHint(Slide.hint);
 
             impress().init();
         },
@@ -34,7 +35,7 @@ define([
         },
 
         addSlide: function (slide) {
-            // console.log(content);
+            // console.log(slide);
 
             var data = {};
 
@@ -91,6 +92,21 @@ define([
             }
             this.x += this.dx;
             this.y += this.dy;
+        },
+
+        addHint: function (hint) {
+            if (!hint) {
+                return;
+            }
+
+            var hintEl = $('<div>')
+                .addClass('hint')
+                .append($('<p>').text(
+                    'ontouchstart' in document.documentElement && hint[1] ?
+                        hint[1] : hint[0]
+                    ));
+
+            $(document.body).append(hintEl);
         }
     });
 
