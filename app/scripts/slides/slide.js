@@ -10,8 +10,9 @@ define([
     'text!slides/08.html',
     'text!slides/09.html',
     'text!slides/10.html',
-    'text!slides/11.html'
-], function (S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11) {
+    'text!slides/11.html',
+    'text!slides/12.html'
+], function (S01, S02, S03, S04, S05, S06, S07, S08, S09, S10, S11, S12) {
     'use strict';
 
     var Slide = {
@@ -26,7 +27,8 @@ define([
             {content: S08, id: 'ing', x: 3500, y: -850, rotate: 270, scale: 6},
             {content: S09, id: 'imagination', x: 6700, y: -300, scale: 6},
             {content: S10, id: 'source', x: 6300, y: 2000, rotate: 20, scale: 4},
-            {content: S11, id: 'one-more-thing', x: 6000, y: 4000, scale: 2}
+            {content: S11, id: 'one-more-thing', x: 6000, y: 4000, scale: 2},
+            {content: S12, id: 'its-in-3d', x: 6200, y: 4300, z: -100, rotateX: -40, rotateY: 10, scale: 2}
         ]
     };
 

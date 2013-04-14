@@ -53,12 +53,27 @@ define([
                 this.dy = slide.dy;
             }
 
+            var rotate = '';
+            if (slide.rotate !== undefined) {
+                rotate = 'data-rotate="' + slide.rotate + '" ';
+            } else {
+                if (slide.rotateX !== undefined) {
+                    rotate += 'data-rotate-x="' + slide.rotateX + '" ';
+                }
+                if (slide.rotateY !== undefined) {
+                    rotate += 'data-rotate-y="' + slide.rotateY + '" ';
+                }
+                if (slide.rotateZ !== undefined) {
+                    rotate += 'data-rotate-z="' + slide.rotateZ + '" ';
+                }
+            }
+
             $(this.el).append(this.template({
                 id: slide.id !== undefined ? slide.id : '',
                 x: this.x,
                 y: this.y,
                 z: this.z,
-                rotate: slide.rotate !== undefined ? slide.rotate : 0,
+                rotate: rotate,
                 scale: slide.scale !== undefined ? slide.scale : 1,
                 klass: slide.klass !== undefined ? slide.klass : '',
                 content: _.template(slide.content)()
