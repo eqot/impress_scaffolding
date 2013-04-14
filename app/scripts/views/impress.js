@@ -36,45 +36,59 @@ define([
         addSlide: function (slide) {
             // console.log(content);
 
+            var data = {};
+
+            data.id = slide.id !== undefined ?
+                'id="' + slide.id + '" ' :
+                '';
+
+            data.klass = 'class="step' + (slide.klass !== undefined ? ' ' + slide.klass : '') + '" ';
+
             if (slide.x !== undefined) {
                 this.x = slide.x;
             }
             if (slide.y !== undefined) {
                 this.y = slide.y;
             }
+            data.x = this.x;
+            data.y = this.y;
+
+            data.z = slide.z !== undefined ?
+                'data-z="' + slide.z + '" ' :
+                '';
+
+            data.rotate = '';
+            if (slide.rotate !== undefined) {
+                data.rotate = 'data-rotate="' + slide.rotate + '" ';
+            } else {
+                if (slide.rotateX !== undefined) {
+                    data.rotate += 'data-rotate-x="' + slide.rotateX + '" ';
+                }
+                if (slide.rotateY !== undefined) {
+                    data.rotate += 'data-rotate-y="' + slide.rotateY + '" ';
+                }
+                if (slide.rotateZ !== undefined) {
+                    data.rotate += 'data-rotate-z="' + slide.rotateZ + '" ';
+                }
+            }
+
+            data.scale = slide.scale !== undefined ?
+                'data-scale="' + slide.scale + '"' :
+                '';
+
+            data.content = slide.content !== undefined ?
+                _.template(slide.content)() :
+                '';
+
+            $(this.el).append(this.template(data));
+
+
             if (slide.dx !== undefined) {
                 this.dx = slide.dx;
             }
             if (slide.dy !== undefined) {
                 this.dy = slide.dy;
             }
-
-            var rotate = '';
-            if (slide.rotate !== undefined) {
-                rotate = 'data-rotate="' + slide.rotate + '" ';
-            } else {
-                if (slide.rotateX !== undefined) {
-                    rotate += 'data-rotate-x="' + slide.rotateX + '" ';
-                }
-                if (slide.rotateY !== undefined) {
-                    rotate += 'data-rotate-y="' + slide.rotateY + '" ';
-                }
-                if (slide.rotateZ !== undefined) {
-                    rotate += 'data-rotate-z="' + slide.rotateZ + '" ';
-                }
-            }
-
-            $(this.el).append(this.template({
-                id: slide.id !== undefined ? slide.id : '',
-                x: this.x,
-                y: this.y,
-                z: slide.z !== undefined ? slide.z : 0,
-                rotate: rotate,
-                scale: slide.scale !== undefined ? slide.scale : 1,
-                klass: slide.klass !== undefined ? slide.klass : '',
-                content: slide.content !== undefined ? _.template(slide.content)() : ''
-            }));
-
             this.x += this.dx;
             this.y += this.dy;
         }
