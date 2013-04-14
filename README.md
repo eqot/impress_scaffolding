@@ -27,4 +27,4 @@ Files in the app directory can be built into minified and optimized files in the
 grunt build
 ```
 
-Then you can open dist/index.html to see a demo which is based on [impress.js demo](http://bartaz.github.io/impress.js) and implemented in the app/scripts/slides directory.
+Then you can open dist/index.html to see a [demo](http://eqot.github.io/impress_scaffolding) which is based on [impress.js demo](http://bartaz.github.io/impress.js) and implemented in the app/scripts/slides directory.
