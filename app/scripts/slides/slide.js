@@ -28,7 +28,8 @@ define([
             {content: S09, id: 'imagination', x: 6700, y: -300, scale: 6},
             {content: S10, id: 'source', x: 6300, y: 2000, rotate: 20, scale: 4},
             {content: S11, id: 'one-more-thing', x: 6000, y: 4000, scale: 2},
-            {content: S12, id: 'its-in-3d', x: 6200, y: 4300, z: -100, rotateX: -40, rotateY: 10, scale: 2}
+            {content: S12, id: 'its-in-3d', x: 6200, y: 4300, z: -100, rotateX: -40, rotateY: 10, scale: 2},
+            {id: 'overview', x: 3000, y: 1500, scale: 10}
         ]
     };
 

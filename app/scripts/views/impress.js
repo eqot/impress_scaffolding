@@ -72,7 +72,7 @@ define([
                 rotate: rotate,
                 scale: slide.scale !== undefined ? slide.scale : 1,
                 klass: slide.klass !== undefined ? slide.klass : '',
-                content: _.template(slide.content)()
+                content: slide.content !== undefined ? _.template(slide.content)() : ''
             }));
 
             this.x += this.dx;
