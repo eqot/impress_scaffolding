@@ -17,10 +17,14 @@ This requires [Node.js](http://nodejs.org/) and [Yeoman](http://yeoman.io/) to b
 
 Other libraries and tools can be installed with npm and bower.
 
-  npm install && bower install
+```
+npm install && bower install
+```
 
 Files in the app directory can be built into minified and optimized files in the dist directory.
 
-  grunt build
+```
+grunt build
+```
 
 Then you can open dist/index.html to see a demo which is based on [impress.js demo](http://bartaz.github.io/impress.js) and implemented in the app/scripts/slides directory.
