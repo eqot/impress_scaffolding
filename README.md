@@ -28,3 +28,8 @@ grunt build
 ```
 
 Then you can open dist/index.html with browser to see a [demo](http://eqot.github.io/impress_scaffolding) which is based on [impress.js demo](http://bartaz.github.io/impress.js) and implemented in the app/scripts/slides directory.
+
+
+License
+-------
+Copyright 2013 Ikuo Terado. Released under a [MIT license](http://www.opensource.org/licenses/mit-license.php).
