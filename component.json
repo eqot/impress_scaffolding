@@ -9,7 +9,7 @@
     "backbone": "~1.0.0",
     "underscore": "~1.4.4",
     "requirejs-text": "~2.0.5",
-    "controldeck": "https://raw.github.com/eqot/controldeck.js/node_0.10/app.js"
+    "controldeck.js": "https://github.com/eqot/controldeck.js.git"
   },
   "devDependencies": {}
 }
