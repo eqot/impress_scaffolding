@@ -5,7 +5,8 @@ require.config({
         backbone: '../components/backbone/backbone-min',
         text: '../components/requirejs-text/text',
         bootstrap: 'vendor/bootstrap',
-        impress: '../components/impress.js/js/impress'
+        impress: '../components/impress.js/js/impress',
+        controldeck: '../components/controldeck.js/public/controldeck-slides'
     },
     shim: {
         underscore: {
@@ -25,7 +26,7 @@ require.config({
     }
 });
 
-require(['app', 'jquery', 'bootstrap'], function (app) {
+require(['app', 'jquery', 'bootstrap', 'controldeck'], function (app) {
     'use strict';
 
     app();
