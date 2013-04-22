@@ -15,6 +15,7 @@
         console.log('ok');
 
         $('#time').click(activateTimer);
+        $('#time').bind('touchstart', activateTimer);
         $('#time').dblclick(resetTimer);
     });
 
