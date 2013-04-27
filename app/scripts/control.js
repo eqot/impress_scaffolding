@@ -1,4 +1,6 @@
+/*global $ */
 (function() {
+    'use strict';
 
     var State = {
         STOP: 0,
@@ -32,14 +34,14 @@
             pauseTimer();
             state = State.PAUSE;
         }
-    };
+    }
 
     function startTimer() {
         // console.log('startTimer');
 
         startTime = Date.now();
         resumeTimer();
-    };
+    }
 
     function resumeTimer() {
         // console.log('resumeTimer');
@@ -48,13 +50,13 @@
             time = Math.floor((Date.now() - startTime) / 1000);
             showTimer(time);
         }, 1000);
-    };
+    }
 
     function pauseTimer() {
         // console.log('pauseTimer');
 
         clearInterval(timer);
-    };
+    }
 
     function resetTimer() {
         // console.log('resetTimer');
@@ -62,7 +64,7 @@
         pauseTimer();
         showTimer(0);
         state = State.STOP;
-    };
+    }
 
     function showTimer(time) {
         // console.log('showTimer');
@@ -73,6 +75,6 @@
         var timeStr = (min < 10 ? '0' + min : min) + ':' + (sec < 10 ? '0' + sec : sec);
         // console.log(timeStr);
         $('#time').text(timeStr);
-    };
+    }
 
 })();
