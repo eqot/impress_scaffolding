@@ -8,12 +8,22 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title>Sample Slide</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=1024">
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         <link rel="stylesheet" href="styles/main.css">
         <script src="scripts/vendor/modernizr.js"></script>
+        <script src="scripts/vendor/jquery.min.js"></script>
+        <script src="scripts/vendor/controldeck.js"></script>
+
+        <script src="/socket.io/socket.io.js"></script>
     </head>
-    <body>
+    <body class="impress-not-supported">
+
+        <div class="fallback-message">
+            <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+            <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+        </div>
+
         <div id="impress"></div>
 
         <!--[if lt IE 7]>

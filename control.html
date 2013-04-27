@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="styles/control.css">
+    <script src="scripts/vendor/modernizr.js"></script>
+    <script src="scripts/vendor/jquery.min.js"></script>
+    <script src="scripts/control.js"></script>
+</head>
+
+<body>
+    <div id="time" class="btn">
+        00:00
+    </div>
+
+    <div id="misc">
+        <a href="#" data-goto="overview" class="left btn">
+            overview
+        </a>
+        <a href="#" data-goto="0" class="right btn">
+            ◀◀
+        </a>
+    </div>
+    <div id="buttons">
+        <a href="#" data-key="39" class="left btn">
+            <span class="arrow arrow-r">▶</span>
+        </a>
+        <a href="#" data-key="37" class="right btn">
+            <span class="arrow arrow-l">◀</span>
+        </a>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="scripts/vendor/controldeck.js"></script>
+</body>
+
+</html>
