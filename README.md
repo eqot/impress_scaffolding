@@ -21,7 +21,9 @@ Other libraries and tools can be installed with npm and bower.
 npm install && bower install
 ```
 
-Files in the app directory can be built into minified and optimized files in the dist directory.
+You can run ```grunt server``` to launch built-in server and run watch task for live reloading.
+
+Files in the app directory can be built into minified and optimized files in the dist directory for deployment.
 
 ```
 grunt build
